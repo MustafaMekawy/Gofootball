@@ -3,9 +3,19 @@ package myprogram;
 import java.util.Vector;
 
 // DONE
+
 public class login extends verify
 {
+	
+	 /**
+     * the user login by name and password
+     *
+     */
     private String name , password ;
+    /**
+     * this function login to user
+     *
+     */
     public login(Vector<playgroundOwner> owners , Vector<player> players , String name , String password)
     {
         if(check_login(owners, players , name , password))

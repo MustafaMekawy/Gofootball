@@ -2,10 +2,15 @@ package myprogram;
 
 import java.util.Vector;
 
+
 public class verify extends user
 {
     public player player ;
     public playgroundOwner playgroundOwner ;
+    /**
+     *  this function to check the name and password of users
+     *
+     */
     public boolean check_login (Vector<playgroundOwner> owners , Vector<player> players , String name , String password)
     {
         for(int i=0 ; i<owners.size() ; i++)
@@ -28,9 +33,17 @@ public class verify extends user
         }
         return false ;
     }
+    /**
+     * this function to get owner
+     *
+     */
     public playgroundOwner get_owner(){
         return playgroundOwner ;
     }
+    /**
+     * this function to get player
+     *
+     */
     public player get_player(){
         return player;
     }

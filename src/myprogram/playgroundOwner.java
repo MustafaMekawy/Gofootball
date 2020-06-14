@@ -16,7 +16,10 @@ public class playgroundOwner extends user
         set_password(password);
     }
     public playgroundOwner(){}
-
+    /**
+     * this function to add playground
+     *
+     */
     public void add_playground(playgroundOwner playgroundOwner)
     {
         System.out.println("please enter your playground name ");
@@ -31,7 +34,11 @@ public class playgroundOwner extends user
         ground = new playground(name,address,free_slot,id);
         playgroundOwner.grounds.add(ground) ;
     }
-    public void update_playground_information(playgroundOwner playgroundOwner)
+    /**
+     * this function to update playground
+     *
+     */
+    public boolean update_playground_information(playgroundOwner playgroundOwner)
     {
         System.out.println("please enter your playground id");
         Scanner input = new Scanner(System.in);
@@ -49,10 +56,14 @@ public class playgroundOwner extends user
                 playgroundOwner.grounds.elementAt(i).set_name(name);
                 playgroundOwner.grounds.elementAt(i).set_location(address);
                 playgroundOwner.grounds.elementAt(i).set_free_slot((int)free_slot);
-                break;
-            }
+                return true ; }
         }
+        return false ;
     }
+    /**
+     * this function set change hours
+     *
+     */
     public void set_change_hours(playgroundOwner playgroundOwner )
     {
         Scanner input = new Scanner(System.in);
@@ -64,7 +75,7 @@ public class playgroundOwner extends user
             if(id == playgroundOwner.grounds.elementAt(i).get_id())
             {
                 check = true ;
-                System.out.println("correct id \n for this ground , How many slots do you want to set ?");
+                System.out.println("correct id \n for this ground , reset your slots ");
                 int hours = input.nextInt() ;
                 playgroundOwner.grounds.elementAt(i).set_slot(hours);
                 break;
@@ -72,6 +83,10 @@ public class playgroundOwner extends user
         }
         if(!check) System.out.println("you entered wrong id ");
     }
+    /**
+     * this function view his booking
+     *
+     */
     public void view_his_booking(playgroundOwner playgroundOwner )
     {
         for (int i=0 ; i<playgroundOwner.grounds.size() ; i++)
@@ -81,8 +96,17 @@ public class playgroundOwner extends user
                     + playgroundOwner.grounds.elementAt(i).get_slots());
             System.out.println(" number of free slots is "+ free);
         }
+        if (playgroundOwner.grounds.isEmpty())
+            System.out.println("you don't have any ground to display ");
     }
+    /**
+     * this function to set money
+     *
+     */
     public void set_money(float money){this.money = money ;}
+    /**
+     * this function get money
+     *
+     */
     public float get_money(){return money ;}
 }
-

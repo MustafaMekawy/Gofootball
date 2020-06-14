@@ -6,6 +6,11 @@ public class administrator
 {
     public Vector<playground> grounds = new Vector<>() ;
     public Vector<playground> suspended_grounds = new Vector<>() ;
+    
+    /**
+     * this function to activated playground
+     *
+     */
     public boolean activated_playground(int id)
     {
         for(int i=0 ; i<suspended_grounds.size() ; i++)
@@ -23,6 +28,10 @@ public class administrator
         }
         return false;
     }
+    /**
+     * this function to suspend ground
+     *
+     */
     public boolean suspend_playground(playground ground)
     {
         if (ground.get_evaluation()==1) {
@@ -33,6 +42,11 @@ public class administrator
         }
         return false ;
     }
+    
+    /**
+     * this function to delete playground
+     *
+     */
     public boolean delete_playground(playground ground)
     {
         if (ground.get_evaluation()>=2) {

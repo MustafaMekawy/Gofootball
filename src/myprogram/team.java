@@ -5,6 +5,10 @@ import java.util.Vector;
 
 public class team
 {
+	/**
+	 * this function to add players to team
+	 *
+	 */
     public void set_favourite_team(player player , Vector <player> players )
     {
         System.out.println("enter player id you want to add to your team ");
@@ -22,11 +26,19 @@ public class team
         }
         System.out.println("id is incorrect \n OPERATION FAILED ");
     }
+    /**
+     * this function to send invitation to players
+     *
+     */
     public void send_invitation(player player , player player2)
     {
         player2.set_email_content("player "+player.get_id()+" is sending this mail for you \n" +
                 " please accept my invitation to pe in my team ");
     }
+    /**
+     * this function to modify team
+     *
+     */
     public boolean modify_team (player player , Vector<player> players)
     {
         if(player.my_team.isEmpty())
